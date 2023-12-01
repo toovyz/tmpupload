@@ -1,0 +1,38 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2757
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\fs26 \cf0 <VirtualHost {\field{\*\fldinst{HYPERLINK "http://relax24h.net:80"}}{\fldrslt relax24h.net:80}}>\
+	ServerName {\field{\*\fldinst{HYPERLINK "http://relax24h.net"}}{\fldrslt relax24h.net}}\
+	Redirect \'93/\'93 \'93{\field{\*\fldinst{HYPERLINK "https://relax24h.net"}}{\fldrslt https://relax24h.net}}{\field{\*\fldinst{HYPERLINK "https://relax24h.net/"}}{\fldrslt /}}\'93\
+</VirtualHost>\
+<VirtualHost www.{\field{\*\fldinst{HYPERLINK "http://relax24h.net:80"}}{\fldrslt relax24h.net:80}}>\
+	ServerName {\field{\*\fldinst{HYPERLINK "http://relax24h.net"}}{\fldrslt relax24h.net}}\
+	Redirect \'93/\'93 \'93{\field{\*\fldinst{HYPERLINK "https://relax24h.net"}}{\fldrslt https://relax24h.net}}{\field{\*\fldinst{HYPERLINK "https://relax24h.net/"}}{\fldrslt /}}\'93\
+</VirtualHost>\
+<VirtualHost www.{\field{\*\fldinst{HYPERLINK "http://relax24h.net:80"}}{\fldrslt relax24h.net:}}443>\
+	ServerName {\field{\*\fldinst{HYPERLINK "http://relax24h.net"}}{\fldrslt relax24h.net}}\
+	ServerAlias {\field{\*\fldinst{HYPERLINK "http://relax24h.net"}}{\fldrslt relax24h.net}}\
+	ServerAdmin {\field{\*\fldinst{HYPERLINK "mailto:info@relax24h.net"}}{\fldrslt info@relax24h.net}}\
+	DocumentRoot /var/www/relax24h/public_html\
+	<Directory /var/www/relax24h/public_html>\
+		Options FollowSymLinks\
+		AllowOverride All\
+		Order allow, deny\
+		Allow from all\
+		Require all granted\
+	</Directory>\
+	ErrorLog /var/www/relax24h/log/error.log\
+	CustomLog /var/www/relax24h/log/access.log combined\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 	SSLEngine on\
+	SSLCertificateFile /etc/apache2/ssl/relax24h.crt\
+	SSLCertificateKeyFile /etc/apache2/ssl/relax24h.key\
+	SSLCertificateChainFile /etc/apache2/ssl/ca_bundle.crt\
+</VirtualHost>}
